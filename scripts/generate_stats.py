@@ -47,7 +47,7 @@ def get_github_stats():
 
 def generate_stats_svg(stats):
     """Generate SVG with GitHub stats"""
-    width, height = 400, 180
+    width, height = 420, 200
     
     svg = ET.Element("svg", {
         "width": str(width),
@@ -56,49 +56,80 @@ def generate_stats_svg(stats):
         "xmlns": "http://www.w3.org/2000/svg"
     })
     
+    # Add style for dark/light mode support
+    style = ET.SubElement(svg, "style")
+    style.text = """
+        @media (prefers-color-scheme: dark) {
+            .bg { fill: #161b22; }
+            .text { fill: #c9d1d9; }
+            .stat { fill: #58a6ff; }
+            .border { stroke: #30363d; }
+        }
+        @media (prefers-color-scheme: light) {
+            .bg { fill: #ffffff; }
+            .text { fill: #24292f; }
+            .stat { fill: #0969da; }
+            .border { stroke: #d0d7de; }
+        }
+    """
+    
     # Background
     rect = ET.SubElement(svg, "rect", {
         "width": str(width),
         "height": str(height),
-        "fill": "#282a36",
-        "rx": "10"
+        "class": "bg",
+        "rx": "12",
+        "stroke-width": "1",
+        "class": "bg border"
     })
     
     # Title
     title = ET.SubElement(svg, "text", {
         "x": "20",
-        "y": "30",
-        "fill": "#f8f8f2",
-        "font-family": "Arial, sans-serif",
-        "font-size": "16",
-        "font-weight": "bold"
+        "y": "35",
+        "class": "text",
+        "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+        "font-size": "18",
+        "font-weight": "600"
     })
-    title.text = f"GitHub Stats - @{GITHUB_USERNAME}"
+    title.text = f"📊 GitHub Stats"
     
-    # Stats
-    y_offset = 60
+    # Stats with icons
+    y_offset = 70
     stats_items = [
-        f"Repositories: {stats['total_repos']}",
-        f"Followers: {stats['followers']}",
-        f"Following: {stats['following']}"
+        ("📦", f"Repositories", stats['total_repos']),
+        ("👥", f"Followers", stats['followers']),
+        ("👣", f"Following", stats['following'])
     ]
     
-    for item in stats_items:
+    for icon, label, value in stats_items:
+        # Icon + label
         text = ET.SubElement(svg, "text", {
             "x": "20",
             "y": str(y_offset),
-            "fill": "#bd93f9",
-            "font-family": "Arial, sans-serif",
+            "class": "text",
+            "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
             "font-size": "14"
         })
-        text.text = item
-        y_offset += 25
+        text.text = f"{icon} {label}:"
+        
+        # Value
+        value_text = ET.SubElement(svg, "text", {
+            "x": "200",
+            "y": str(y_offset),
+            "class": "stat",
+            "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+            "font-size": "14",
+            "font-weight": "600"
+        })
+        value_text.text = str(value)
+        y_offset += 35
     
     return ET.tostring(svg, encoding="unicode")
 
 def generate_languages_svg(stats):
     """Generate SVG with top languages"""
-    width, height = 400, 180
+    width, height = 420, 220
     
     svg = ET.Element("svg", {
         "width": str(width),
@@ -107,42 +138,96 @@ def generate_languages_svg(stats):
         "xmlns": "http://www.w3.org/2000/svg"
     })
     
+    # Add style for dark/light mode support
+    style = ET.SubElement(svg, "style")
+    style.text = """
+        @media (prefers-color-scheme: dark) {
+            .bg { fill: #161b22; }
+            .text { fill: #c9d1d9; }
+            .border { stroke: #30363d; }
+        }
+        @media (prefers-color-scheme: light) {
+            .bg { fill: #ffffff; }
+            .text { fill: #24292f; }
+            .border { stroke: #d0d7de; }
+        }
+    """
+    
     # Background
     rect = ET.SubElement(svg, "rect", {
         "width": str(width),
         "height": str(height),
-        "fill": "#282a36",
-        "rx": "10"
+        "class": "bg",
+        "rx": "12",
+        "stroke-width": "1",
+        "class": "bg border"
     })
     
     # Title
     title = ET.SubElement(svg, "text", {
         "x": "20",
-        "y": "30",
-        "fill": "#f8f8f2",
-        "font-family": "Arial, sans-serif",
-        "font-size": "16",
-        "font-weight": "bold"
+        "y": "35",
+        "class": "text",
+        "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+        "font-size": "18",
+        "font-weight": "600"
     })
-    title.text = "Top Languages"
+    title.text = "🔤 Top Languages"
     
-    # Languages
-    y_offset = 60
-    colors = ["#ff79c6", "#8be9fd", "#50fa7b", "#f1fa8c", "#ffb86c", "#bd93f9", "#ff5555"]
+    # Languages with GitHub colors
+    lang_colors = {
+        "Python": "#3572A5",
+        "JavaScript": "#f1e05a",
+        "HTML": "#e34c26",
+        "CSS": "#563d7c",
+        "TypeScript": "#2b7489",
+        "Jupyter Notebook": "#F37626",
+        "Java": "#b07219",
+        "C++": "#f34b7d",
+        "Go": "#00ADD8",
+        "Rust": "#dea584",
+        "PHP": "#4F5D95",
+        "Ruby": "#701516",
+        "Swift": "#F05138",
+        "Kotlin": "#A97BFF",
+        "Dart": "#00B4AB"
+    }
     
-    for i, (lang, count) in enumerate(stats["languages"]):
-        color = colors[i % len(colors)]
+    y_offset = 70
+    
+    for lang, count in stats["languages"][:7]:
+        color = lang_colors.get(lang, "#58a6ff")
         
         # Language name
         text = ET.SubElement(svg, "text", {
             "x": "20",
             "y": str(y_offset),
-            "fill": color,
-            "font-family": "Arial, sans-serif",
+            "class": "text",
+            "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
             "font-size": "14"
         })
-        text.text = f"{lang}: {count} repos"
-        y_offset += 25
+        text.text = f"• {lang}"
+        
+        # Count
+        count_text = ET.SubElement(svg, "text", {
+            "x": "200",
+            "y": str(y_offset),
+            "class": "text",
+            "font-family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+            "font-size": "14",
+            "font-weight": "600"
+        })
+        count_text.text = f"{count} repos"
+        
+        # Color indicator
+        circle = ET.SubElement(svg, "circle", {
+            "cx": "350",
+            "cy": str(y_offset - 5),
+            "r": "6",
+            "fill": color
+        })
+        
+        y_offset += 28
     
     return ET.tostring(svg, encoding="unicode")
 

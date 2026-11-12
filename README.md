@@ -10,8 +10,8 @@
 🌐 Web Development (FastAPI, HTML, CSS)
 
 <div>
-  <img height="180em" width="400em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-stats.svg" alt="GitHub Stats"/>
-  <img height="180em" width="400em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-languages.svg" alt="Top Languages"/>
+  <img height="200em" width="420em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-stats.svg" alt="GitHub Stats"/>
+  <img height="220em" width="420em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-languages.svg" alt="Top Languages"/>
 </div>
 
 <br>
