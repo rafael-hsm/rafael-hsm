@@ -129,7 +129,7 @@ def generate_stats_svg(stats):
 
 def generate_languages_svg(stats):
     """Generate SVG with top languages"""
-    width, height = 420, 220
+    width, height = 420, 180
     
     svg = ET.Element("svg", {
         "width": str(width),
@@ -195,7 +195,7 @@ def generate_languages_svg(stats):
     
     y_offset = 70
     
-    for lang, count in stats["languages"][:7]:
+    for lang, count in stats["languages"][:5]:
         color = lang_colors.get(lang, "#58a6ff")
         
         # Language name
@@ -227,7 +227,7 @@ def generate_languages_svg(stats):
             "fill": color
         })
         
-        y_offset += 28
+        y_offset += 24
     
     return ET.tostring(svg, encoding="unicode")
 
