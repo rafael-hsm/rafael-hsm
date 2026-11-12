@@ -11,8 +11,8 @@
 
 <div>
   <a href="https://github.com/rafael-hsm">
-  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api?username=rafael-hsm&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rafael-hsm&layout=compact&langs_count=7&theme=dracula"/>
+  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api?username=rafael-hsm&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
+  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rafael-hsm&layout=compact&langs_count=7&theme=dracula" alt="Top Languages"/>
 </div>
 
 <br>
@@ -39,7 +39,7 @@
 ## 📊 Data & ML Tools
 
 <div style="display: inline_block">
-  <img align="center" alt="PowerBI" height="30" width="40" src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/svg/powerbi.svg">
+  <img align="center" alt="PowerBI" height="30" width="40" src="https://img.icons8.com/color/480/power-bi.png">
   <img align="center" alt="Kafka" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original.svg">
   <img align="center" alt="DuckDB" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/duckdb/duckdb-original.svg">
 </div>
@@ -48,23 +48,23 @@
 
 ## 🚀 Featured Projects
 
+<!-- Add your repositories here by replacing REPO_NAME with actual repo names -->
+<!-- Example:
 <div>
-  <a href="#">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rafael-hsm&repo=REPO_NAME&theme=dracula" />
-  </a>
-  <a href="#">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rafael-hsm&repo=REPO_NAME&theme=dracula" />
+  <a href="https://github.com/rafael-hsm/your-repo">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rafael-hsm&repo=your-repo&theme=dracula" />
   </a>
 </div>
+-->
 
 <br>
 
 ## 📱 Connect with Me
 
 <div> 
-  <a href="https://instagram.com/rafa.hsm" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-  <a href = "mailto:contatorafameireles2011@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/rafael-meireles-a98b2a32" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href="https://instagram.com/rafa.hsm" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
+  <a href = "mailto:contatorafameireles2011@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/rafael-meireles-a98b2a32" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
   
   ![Snake animation](https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-contribution-grid-snake.svg)
  
