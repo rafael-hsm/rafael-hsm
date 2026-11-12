@@ -10,9 +10,8 @@
 🌐 Web Development (FastAPI, HTML, CSS)
 
 <div>
-  <a href="https://github.com/rafael-hsm">
-  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api?username=rafael-hsm&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
-  <img height="180em" width="400em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rafael-hsm&layout=compact&langs_count=7&theme=dracula" alt="Top Languages"/>
+  <img height="180em" width="400em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-stats.svg" alt="GitHub Stats"/>
+  <img height="180em" width="400em" src="https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-languages.svg" alt="Top Languages"/>
 </div>
 
 <br>
@@ -62,9 +61,10 @@
 ## 📱 Connect with Me
 
 <div> 
-  <a href="https://instagram.com/rafa.hsm" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
+  <!-- Note: GitHub removes target="_blank" for security - links open in same tab -->
+  <a href="https://instagram.com/rafa.hsm"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
   <a href = "mailto:contatorafameireles2011@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/rafael-meireles-a98b2a32" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
+  <a href="https://www.linkedin.com/in/rafael-meireles-a98b2a32"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
   
   ![Snake animation](https://raw.githubusercontent.com/rafael-hsm/rafael-hsm/output/github-contribution-grid-snake.svg)
  
