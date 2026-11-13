@@ -129,7 +129,7 @@ def generate_stats_svg(stats):
 
 def generate_languages_svg(stats):
     """Generate SVG with top languages"""
-    width, height = 420, 180
+    width, height = 420, 200
     
     svg = ET.Element("svg", {
         "width": str(width),
